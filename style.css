@@ -1,0 +1,209 @@
+:root {
+  --me-color: rgb(238, 18, 18);
+  --pu-color: rgb(255, 255, 255);
+  --ab-color: rgb(66, 64, 64);
+  --hi-color: rgb(20, 20, 20);
+  --kb-color: rgba(20, 20, 20, 1);
+  --ka-color: rgba(252, 252, 252, 0);
+  --bg:rgba(238, 18, 18, 0.8);
+}
+.darkm {
+  --ab-color: rgb(238, 18, 18);
+  --hi-color: rgb(255, 255, 255);
+  --me-color: rgb(66, 64, 64);
+  --pu-color: rgb(20, 20, 20);
+  --kb-color: rgba(255, 255, 255, 1);
+  --ka-color: rgba(252, 252, 252, 0);
+  --bg:rgba(66, 64, 64,0.8);
+}
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+body {
+  font-family: "Kanit", sans-serif;
+  background-color: var(--hi-color);
+  color: var(--pu-color);
+  min-height: 1000px;
+  transition: 1s;
+}
+/* NAV */
+.atas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 4%;
+  background-color: var(--bg);
+  border-bottom: 2px solid var(--ab-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+.atas .nama {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+.atas .nama span {
+  color: var(--hi-color);
+}
+.atas .menu a {
+  color: var(--pu-color);
+  display: inline-block;
+  font-size: 2rem;
+  margin: 0.8rem;
+}
+.atas .menu a:hover {
+  color: var(--ab-color);
+}
+.atas .menu a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.1rem;
+  border-bottom: 0.2rem solid var(--ab-color);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+.atas .menu a:hover::after {
+  transform: scaleX(1.1);
+}
+.atas .logo a {
+  color: var(--pu-color);
+  margin: 0.5rem;
+}
+.atas .logo a:hover {
+  color: var(--ab-color);
+}
+#mn {
+  display: none;
+}
+/* Atas */
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url(guild.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.home::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  bottom: 0;
+  background: linear-gradient(0deg, var(--kb-color) 8%, var(--ka-color) 45%);
+}
+.home .konten {
+  position: absolute;
+  top: 20%;
+  padding: 1.4rem 5%;
+  max-width: 60rem;
+}
+.home .konten h1 {
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255);
+  line-height: 1.5;
+}
+.home .konten p {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  color: white;
+  padding: 0.1rem 0.5rem;
+  background-color: rgba(66, 64, 64,0.8);
+}
+.home .konten p span{
+  color: rgb(238, 18, 18);
+}
+.home .konten h1 span{
+  color: rgb(20, 20, 20);
+  padding: 0.1rem 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Prof */
+.prof{
+  padding: 7rem 7% 10rem;
+}
+
+/* Galeri */
+.galeri{
+  padding: 7rem 7% 10rem;
+}
+
+/* Bwh */
+footer{
+  background-color: red;
+  text-align: center;
+}
+
+/* Media Query */
+/* Destop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 100%;
+  }
+}
+/* Tablet */
+@media (max-width: 840px) {
+  html {
+    font-size: 80%;
+  }
+  #mn {
+    display: inline-block;
+  }
+  .atas .menu {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--ab-color);
+    width: 9rem;
+    height: 27vh;
+    transition: 0.3s;
+  }
+  .atas .menu.active {
+    right: 0;
+  }
+  .atas .menu a {
+    color: var(--pu-color);
+    display: block;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.7rem;
+  }
+  .atas .menu a:hover {
+    color: var(--hi-color);
+  }
+  .atas .menu a::after {
+    transform-origin: 0 0;
+    border-color: var(--me-color);
+  }
+  .atas .menu a:hover::after {
+    transform: scaleX(75%);
+  }
+  .home{
+    min-height: 80vh;
+  }
+  .home .konten{
+    position: absolute;
+    top: 15%;
+  }
+}
+/* HP */
+@media (max-width: 450px) {
+  html {
+    font-size: 80%;
+  }
+}
